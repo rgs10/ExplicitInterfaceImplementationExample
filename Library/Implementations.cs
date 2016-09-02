@@ -46,4 +46,19 @@ namespace Library
         }
     }
 
+    public class EnumerableCatalog : IEnumerable<string>
+    {
+        // return type mismatch so VS implements one explicitly 
+        public IEnumerator<string> GetEnumerator()
+        {
+            // alll of our code
+            return null;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+    }
+
 }
